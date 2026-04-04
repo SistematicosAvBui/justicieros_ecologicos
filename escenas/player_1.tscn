@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://s3ljrdej4ngb"]
+
+[ext_resource type="Script" uid="uid://ruhcspfmikah" path="res://scripts/player_1.gd" id="1_k8t1j"]
+[ext_resource type="Texture2D" uid="uid://2i2h225fiuu3" path="res://assets/profesor/profesor_caminando_de_lado_derecho_pie_izquierdo.png" id="2_4lhgq"]
+[ext_resource type="Texture2D" uid="uid://baljolntufq07" path="res://assets/profesor/profesor_caminando_de_lado_derecho_pie_derecho.png" id="3_re4y5"]
+[ext_resource type="Texture2D" uid="uid://y2pv56hx1qh7" path="res://assets/profesor/profesor_quieto_de_lado_derecho.png" id="4_46fsw"]
+[ext_resource type="Texture2D" uid="uid://c14lwa0hc6s51" path="res://assets/profesor/profesor_de_espaldas_caminando_pie_derecho.png" id="5_76nnr"]
+[ext_resource type="Texture2D" uid="uid://d144uikypu3ne" path="res://assets/profesor/profesor_de_espaldas_caminando_pie_izquierdo.png" id="6_h6tat"]
+[ext_resource type="Texture2D" uid="uid://cvey0jwgxsqq2" path="res://assets/profesor/profesor_caminando_pie_derecho.png" id="7_o06fs"]
+[ext_resource type="Texture2D" uid="uid://b4riw64qxtwtn" path="res://assets/profesor/profesor_caminando_pie_izquierdo.png" id="8_t08jc"]
+[ext_resource type="Texture2D" uid="uid://ckpfscyiexwnd" path="res://assets/profesor/profesor_caminando_de_lado_izquierdo_pie_derecho.png" id="9_2i3br"]
+[ext_resource type="Texture2D" uid="uid://bj7etcjtu2nch" path="res://assets/profesor/profesor_caminando_de_lado_izquierdo_pie_izquierdo.png" id="10_maw6q"]
+[ext_resource type="Texture2D" uid="uid://rw2tnu8ymf6i" path="res://assets/profesor/profesor_quieto_de_lado_izquierdo.png" id="11_miucj"]
+[ext_resource type="Texture2D" uid="uid://byvbv7xm5veni" path="res://assets/profesor/profesor_quieto_de_frente.png" id="12_gmkl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8t1j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfdjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4lhgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_re4y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_46fsw")
+}],
+"loop": true,
+"name": &"caminar_derecho",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_76nnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h6tat")
+}],
+"loop": true,
+"name": &"caminar_espalda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_o06fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t08jc")
+}],
+"loop": true,
+"name": &"caminar_frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_2i3br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_maw6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_miucj")
+}],
+"loop": true,
+"name": &"caminar_izquierdo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_gmkl2")
+}],
+"loop": true,
+"name": &"quieto_de_frente",
+"speed": 5.0
+}]
+
+[node name="player_1" type="CharacterBody2D" unique_id=55368142]
+collision_layer = 3
+script = ExtResource("1_k8t1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=849319638]
+shape = SubResource("RectangleShape2D_k8t1j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1603746867]
+position = Vector2(-3.75, -9.124994)
+scale = Vector2(0.22395834, 0.2135761)
+sprite_frames = SubResource("SpriteFrames_rfdjb")
+animation = &"caminar_izquierdo"
+frame_progress = 0.9366598

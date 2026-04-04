@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cdbkhml3aybdw"]
+
+[ext_resource type="PackedScene" uid="uid://b8fttctyjx3k0" path="res://escenas/mountro_de_la_basura.tscn" id="3_xsxho"]
+[ext_resource type="PackedScene" uid="uid://cdvufwrk0u0j6" path="res://escenas/basura.tscn" id="4_3f1ia"]
+[ext_resource type="Texture2D" uid="uid://iui787pxg1bf" path="res://assets/fondo_laboratorio.png" id="5_5rmny"]
+[ext_resource type="PackedScene" uid="uid://s3ljrdej4ngb" path="res://escenas/player_1.tscn" id="6_iop0s"]
+
+[node name="World" type="Node2D" unique_id=1733094672]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=539932022]
+z_index = -1
+texture = ExtResource("5_5rmny")
+
+[node name="player_1" parent="." unique_id=55368142 instance=ExtResource("6_iop0s")]
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="player_1" unique_id=2135911367]
+zoom = Vector2(1.5, 1.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1492080021]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2075941745]
+polygon = PackedVector2Array(41, -30, 184, -32, 185, -5, 201, -4, 201, -30, 374, -33)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1146843230]
+polygon = PackedVector2Array(38, 19, 372, 20, 369, 286, 332, 286, 332, 55, 81, 54, 84, 279, 60, 284)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=165071879]
+polygon = PackedVector2Array(-46, 23, -45, 142, -16, 141, -16, 186, -45, 186, -45, 286, -86, 286, -86, 50, -338, 50, -336, 287, -368, 284, -375, 30)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1543722917]
+polygon = PackedVector2Array(-371, -244, -373, -35, -351, -37, -352, -201, -190, -201, -190, -95, -161, -91, -161, -107, -132, -109, -86, -66, -62, -66, -64, -82, -37, -80, -37, -67, 63, -72, 67, -56, 91, -56, 86, -74, 128, -106, 157, -106, 157, -43, 186, -45, 186, -204, 358, -201, 352, -43, 381, -45, 377, -240, 218, -236, 215, -257)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1683979607]
+polygon = PackedVector2Array(-689, -240, -427, -234, -424, -97, -461, -97, -461, -194, -698, -203, -689, 43, -461, 37, -458, -3, -430, 5, -424, 274, -458, 279, -461, 74, -686, 76, -689, 356, -447, 362, -447, 336, -418, 336, -424, 385, -724, 396, -735, -234)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=367431879]
+polygon = PackedVector2Array(-375, 378, -373, 335, -333, 335, -333, 372, -90, 372, -90, 335, -65, 341, -65, 381)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1684682814]
+polygon = PackedVector2Array(61, 338, 81, 338, 84, 369, 332, 369, 332, 332, 366, 335, 366, 392, 58, 400)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1078835518]
+polygon = PackedVector2Array(418, -246, 680, -240, 689, -392, 709, -374, 703, 381, 415, 381, 415, 335, 440, 335, 443, 358, 686, 355, 686, 113, 443, 118, 449, 227, 423, 235, 421, 1, 452, 10, 452, 33, 603, 38, 609, 84, 683, 81, 680, -204, 455, -201, 458, -101, 426, -104)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1066979174]
+polygon = PackedVector2Array(-701, -247, -701, -392, 686, -387, 689, -247, 654, -367, -686, -381)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2115846730]
+polygon = PackedVector2Array(-424, 385, -375, 385, 61, 382, 418, 382, 361, 439, -413, 442)
+
+[node name="mountro de la basura" parent="." unique_id=389553354 instance=ExtResource("3_xsxho")]
+
+[node name="Area2D" parent="." unique_id=709822737 instance=ExtResource("4_3f1ia")]
+position = Vector2(-393, -280)

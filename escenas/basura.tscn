@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cdvufwrk0u0j6"]
+
+[ext_resource type="Script" uid="uid://b6f6uvqxwcc5c" path="res://scripts/basura.gd" id="1_xbolt"]
+[ext_resource type="Texture2D" uid="uid://crn21pa776m3u" path="res://assets/basura_abierta.png" id="2_v3pcc"]
+[ext_resource type="Texture2D" uid="uid://c3gfgkpgf0l3j" path="res://assets/basura_cerrada.png" id="3_lpta0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6yof7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v3pcc")
+}],
+"loop": true,
+"name": &"abierta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lpta0")
+}],
+"loop": true,
+"name": &"cerrada",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npshe"]
+radius = 252.47379
+
+[node name="Area2D" type="Area2D" unique_id=709822737]
+script = ExtResource("1_xbolt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251006782]
+position = Vector2(1.2733144, 9.64432)
+scale = Vector2(0.26146066, 0.2916921)
+sprite_frames = SubResource("SpriteFrames_6yof7")
+animation = &"cerrada"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1252013007]
+position = Vector2(1, 11)
+scale = Vector2(0.17627406, 0.1437086)
+shape = SubResource("CircleShape2D_npshe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
