@@ -81,10 +81,11 @@ collision_layer = 3
 script = ExtResource("1_k8t1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=849319638]
+position = Vector2(71, -4)
 shape = SubResource("RectangleShape2D_k8t1j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1603746867]
-position = Vector2(-3.75, -9.124994)
+position = Vector2(73.00001, -9)
 scale = Vector2(0.22395834, 0.2135761)
 sprite_frames = SubResource("SpriteFrames_rfdjb")
 animation = &"caminar_izquierdo"

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b8fttctyjx3k0" path="res://escenas/mountro_de_la_basura.tscn" id="3_xsxho"]
 [ext_resource type="PackedScene" uid="uid://cdvufwrk0u0j6" path="res://escenas/basura.tscn" id="4_3f1ia"]
 [ext_resource type="Texture2D" uid="uid://iui787pxg1bf" path="res://assets/fondo_laboratorio.png" id="5_5rmny"]
+[ext_resource type="PackedScene" uid="uid://c5lg5b463x8gt" path="res://escenas/item_basura.tscn" id="5_jhysc"]
 [ext_resource type="PackedScene" uid="uid://s3ljrdej4ngb" path="res://escenas/player_1.tscn" id="6_iop0s"]
 
 [node name="World" type="Node2D" unique_id=1733094672]
@@ -53,3 +54,5 @@ polygon = PackedVector2Array(-424, 385, -375, 385, 61, 382, 418, 382, 361, 439, 
 
 [node name="Area2D" parent="." unique_id=709822737 instance=ExtResource("4_3f1ia")]
 position = Vector2(-393, -280)
+
+[node name="ItemBasura" parent="." unique_id=417771365 instance=ExtResource("5_jhysc")]

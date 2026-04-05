@@ -1,20 +1,18 @@
 extends Area2D
 
-# Referencia al AnimatedSprite2D (asegúrate de que se llame así)
 @onready var anim = $AnimatedSprite2D 
 
-func _ready():
-	# Al empezar, la caneca debe estar cerrada
-	anim.play("cerrada")
-
-# Cuando el jugador entra al área
 func _on_body_entered(body):
-	if body.name == "player_1": # Verifica que sea tu personaje
-		anim.play("abierta")
-		print("Cerca de la basura: Abriendo...")
+	# 1. Verificamos que sea el jugador
+	if body.name == "player_1":
+		# 2. Verificamos si el jugador tiene la variable 'tiene_basura' en true
+		if body.tiene_basura == true:
+			anim.play("abierta")   # Abre la tapa
+			body.soltar_objeto()   # <--- ESTO le quita el color amarillo al personaje
+			print("¡Basura entregada!")
+		else:
+			print("No tienes nada que entregar.")
 
-# Cuando el jugador se aleja del área
 func _on_body_exited(body):
 	if body.name == "player_1":
-		anim.play("cerrada")
-		print("Lejos de la basura: Cerrando...")
+		anim.play("cerrada")  # Cierra la tapa al alejarte

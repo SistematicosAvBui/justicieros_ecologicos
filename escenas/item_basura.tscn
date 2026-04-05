@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c5lg5b463x8gt"]
+
+[ext_resource type="Script" uid="uid://cunxahhvs5sa4" path="res://scripts/item_basura.gd" id="1_8n1d6"]
+[ext_resource type="Texture2D" uid="uid://xsk7eimdbf51" path="res://assets/banana.png" id="1_mfkrv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ox5ha"]
+radius = 16.27882
+
+[node name="ItemBasura" type="Area2D" unique_id=417771365]
+script = ExtResource("1_8n1d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1179510501]
+position = Vector2(378.0625, -65.125)
+scale = Vector2(0.06973684, 0.06500002)
+texture = ExtResource("1_mfkrv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286514395]
+position = Vector2(382, -66)
+shape = SubResource("CircleShape2D_ox5ha")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
